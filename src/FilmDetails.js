@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
-import TMDB from "./TMDB.js";
+import FilmRow from "./FilmRow.js";
 
 class FilmDetails extends Component{
 	render (){
-		return(
+		const filmDetails = this.props.filmDetails.map(f => {
+		return
 			<div> 
-				<h1>{this.props.filmDetails[0].overview}</h1>
-			</div>)
+				<p>{f.overview}</p>
+			</div>
+		});
+		return (
+			<div>{filmDetails}</div>
+		);
 	}
 }
 
 
 export default FilmDetails;
-
